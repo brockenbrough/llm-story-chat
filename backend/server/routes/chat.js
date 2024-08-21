@@ -6,7 +6,6 @@ const { OpenAI } = require("openai"); // Corrected import to require syntax
 dotenv.config();
 
 const openai = new OpenAI({ apiKey: process.env.CHAT_API_KEY }); // Initialize OpenAI with API key
-//const openai = new OpenAI({ apiKey: "WtrooEWsN0CkPgiZeObLuxLGeF7ixSL00feNEF4HmJT3BlbkFJ2PUgQi91-cPIJsLORl68JQ1vfxAU0E2EPT3cx3fYEA" }); // Initialize OpenAI with API key
 
 router.get('/canned', async (req, res) => {
     try {
