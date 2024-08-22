@@ -1,0 +1,51 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.logout-button {
+    display: inline-block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #6e8efb; /* Solid color */
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+    background-color: #a777e3; /* Change to a different solid color on hover */
+    transform: translateY(-2px);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
