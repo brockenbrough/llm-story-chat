@@ -4,6 +4,7 @@ import axios from 'axios';
 function SingleChatPage() {
     const [systemMessage, setSystemMessage] = useState('');
     const [userPrompt, setUserPrompt] = useState('');
+    const [responseMessage, setResponseMessage] = useState('');  // State for storing the response
 
     const handleAsk = async () => {
         try {
@@ -11,9 +12,10 @@ function SingleChatPage() {
                 systemMessage,
                 userPrompt
             });
-            console.log('Response:', response.data);
+            setResponseMessage(response.data.content);  // Set the response data in the state
         } catch (error) {
             console.error('There was an error!', error);
+            setResponseMessage('There was an error processing your request.');  // Set an error message
         }
     };
 
@@ -41,6 +43,10 @@ function SingleChatPage() {
                 </label>
             </div>
             <button onClick={handleAsk}>Ask</button>
+            <div>
+                <h2>Response:</h2>
+                <p>{responseMessage}</p>  {/* Display the response message */}
+            </div>
         </div>
     );
 }
