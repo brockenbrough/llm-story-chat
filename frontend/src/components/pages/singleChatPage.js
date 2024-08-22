@@ -11,13 +11,17 @@ function SingleChatPage() {
     const handleAsk = async () => {
         setLoading(true); // Set loading state to true
         document.body.style.cursor = 'wait'; // Change cursor to wait
-        
+
+        const messageHistory = [
+            { role: "system", content: 'You are a useful assistant.' },
+            { role: "user", content: userPrompt },
+        ];
+
         try {
             const response = await axios.post('http://localhost:8081/chat/canned', {
-                systemMessage,
-                userPrompt
+                messageHistory
             });
-            setResponseMessage(response.data.content);
+            setResponseMessage(response.data.message.content);
         } catch (error) {
             console.error('There was an error!', error);
             setResponseMessage('There was an error processing your request.');
