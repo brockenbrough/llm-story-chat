@@ -11,7 +11,7 @@ const openai = new OpenAI({ apiKey: process.env.CHAT_API_KEY }); // Initialize O
 router.get('/canned', async (req, res) => {
     try {
         const completion = await openai.chat.completions.create({
-            model: "gpt-4o-mini", // Corrected model name
+            model: "gpt-4o-mini", // Another model name: gpt-4
             messages: [
                 { role: "system", content: "You are a helpful assistant." },
                 {
