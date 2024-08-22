@@ -47,10 +47,11 @@ function SingleChatPage() {
                 <div className="input-container">
                     <label>
                         Your Prompt:
-                        <input
-                            type="text"
+                        <textarea
                             value={userPrompt}
                             onChange={(e) => setUserPrompt(e.target.value)}
+                            rows="4"
+                            style={{ width: '100%' }}
                         />
                     </label>
                 </div>
